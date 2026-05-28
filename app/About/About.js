@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { Award, Code, Star, Zap } from "lucide-react";
+import QuickFacts from "../components/QuickFacts";
 
 const getLiveTime = () => new Date().toLocaleTimeString();
 const getLearningDays = () => {
@@ -186,6 +187,8 @@ const About = () => {
             </div>
           ))}
         </div>
+
+        <QuickFacts />
 
         {/* Journey Timeline */}
         <div className="max-w-5xl mx-auto">
