@@ -13,7 +13,6 @@ import BgAnimations from './components/BgAnimations';
 export default function Home() {
   return (
     <>
-    <Navbar />
     <Home_ />
     <GithubSection />
     <Stack />

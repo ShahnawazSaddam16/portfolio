@@ -1,7 +1,17 @@
-import { Geist, Geist_Mono, Poppins, Inter, JetBrains_Mono, Manrope, Sora, Urbanist } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Poppins,
+  Inter,
+  JetBrains_Mono,
+  Manrope,
+  Sora,
+  Urbanist,
+} from "next/font/google";
 import "./globals.css";
-import Footer from './components/Footer';
+import Footer from "./components/Footer";
 import BgAnimations from "./components/BgAnimations";
+import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -88,7 +98,7 @@ export const metadata = {
     description:
       "Hi, I'm Shahnawaz Saddam Butt. A Full Stack Developer skilled in Python, JavaScript, and learning C.",
     images: ["/butt.png"],
-    creator: "@your_twitter_handle", 
+    creator: "@your_twitter_handle",
   },
   icons: {
     icon: "/butt.png",
@@ -101,9 +111,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${inter.variable} ${jetbrainsMono.variable} ${manrope.variable} ${sora.variable} ${urbanist.variable} antialiased`}
       >
-      <BgAnimations />
+        <Navbar />
+        <BgAnimations />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
