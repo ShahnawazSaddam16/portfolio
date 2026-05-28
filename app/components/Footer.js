@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
         
         {/* Left: Name or Logo */}
-        <div className="text-lg font-semibold mb-4 sm:mb-0">
+        <div className="text-lg font-semibold mb-4 sm:mb-0 font-[family-name:var(--font-manrope)]">
           © {new Date().getFullYear()} Shahnawaz Saddam Butt
         </div>
 
@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
 
       {/* Optional Bottom Line */}
-      <p className="text-center text-sm text-gray-900 mt-4">
+      <p className="text-center text-sm text-gray-900 mt-4 font-[family-name:var(--font-inter)]">
         Built with 💻 using Next.js & Tailwind CSS
       </p>
     </footer>

@@ -386,6 +386,7 @@ export default function Projects({ limit = 10, single = false }) {
               textTransform: "uppercase",
               marginBottom: "12px",
               opacity: 0.8,
+              fontFamily: "var(--font-jetbrains-mono)",
             }}
           >
             Selected Work
@@ -402,6 +403,7 @@ export default function Projects({ limit = 10, single = false }) {
               letterSpacing: "-0.03em",
               lineHeight: 1.1,
               marginBottom: "20px",
+              fontFamily: "var(--font-urbanist)",
             }}
           >
             Projects

@@ -32,25 +32,25 @@ const Hackathon = () => {
                 </div>
 
                 <div className="w-full lg:w-2/3 space-y-5">
-                  <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-[family-name:var(--font-poppins)]">
                     Hackathon Achievement
                   </h2>
-                  <p className="text-gray-300 leading-relaxed text-lg">
+                  <p className="text-gray-300 leading-relaxed text-lg font-[family-name:var(--font-inter)]">
                     Proud to secure <span className="font-bold text-cyan-300">37th place</span> among <span className="font-bold text-blue-300">775 participants</span> in a competitive hackathon. This project is fully self-made and crafted with focused expertise in full-stack development, UI/UX, and system design.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="p-4 rounded-xl border border-cyan-500/30 bg-slate-800/70 backdrop-blur-md">
-                      <p className="text-sm text-gray-400 uppercase tracking-wider">Event</p>
-                      <p className="text-xl font-semibold text-cyan-300">Global Hack 2026</p>
+                      <p className="text-sm text-gray-400 uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)]">Event</p>
+                      <p className="text-xl font-semibold text-cyan-300 font-[family-name:var(--font-sora)]">Global Hack 2026</p>
                     </div>
                     <div className="p-4 rounded-xl border border-blue-500/30 bg-slate-800/70 backdrop-blur-md">
-                      <p className="text-sm text-gray-400 uppercase tracking-wider">Rank</p>
-                      <p className="text-xl font-semibold text-blue-300">37 / 775</p>
+                      <p className="text-sm text-gray-400 uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)]">Rank</p>
+                      <p className="text-xl font-semibold text-blue-300 font-[family-name:var(--font-sora)]">37 / 775</p>
                     </div>
                   </div>
 
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 font-[family-name:var(--font-inter)]">
                     During the hackathon, the project showcased advanced interactive 3D UI effects, strong backend performance, and responsive user experience under tight timelines.
                   </p>
 
@@ -58,7 +58,7 @@ const Hackathon = () => {
                     href="https://devpost.com/software/ecotracker-p05z4d"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white font-semibold shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-300"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white font-semibold shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-300 font-[family-name:var(--font-sora)]"
                   >
                     See Hackathon Results
                   </a>

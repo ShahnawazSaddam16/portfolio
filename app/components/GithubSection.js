@@ -20,14 +20,14 @@ export default function GithubSection() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
             <div className="flex items-center gap-3">
               <Sparkles className="w-5 h-5 text-cyan-400 animate-pulse" />
-              <h3 className="text-lg sm:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">
+              <h3 className="text-lg sm:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 font-[family-name:var(--font-manrope)]">
                 GitHub Contributions
               </h3>
             </div>
 
             <div className="flex items-center gap-3">
               <Link href={`https://github.com/${username}`}>
-                <button className="px-3 py-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium text-sm shadow-md hover:scale-105 transition">View Profile</button>
+                <button className="px-3 py-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium text-sm shadow-md hover:scale-105 transition font-[family-name:var(--font-inter)]">View Profile</button>
               </Link>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function GithubSection() {
             </div>
           </div>
 
-          <p className="mt-4 text-sm text-gray-300">A snapshot of recent activity. Hover or tap days to see contribution counts. Styled to match the portfolio theme.</p>
+          <p className="mt-4 text-sm text-gray-300 font-[family-name:var(--font-inter)]">A snapshot of recent activity. Hover or tap days to see contribution counts. Styled to match the portfolio theme.</p>
         </div>
       </div>
     </section>

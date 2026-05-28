@@ -74,7 +74,7 @@ const FAQ = () => {
       `}</style>
 
       {/* Header */}
-      <section className="mt-20 px-4 sm:px-8">
+      <section className="mt-20 px-4 sm:px-8" id="FAQ">
         <header className="flex justify-center flex-col items-center text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-[family-name:var(--font-poppins)]">
             Frequently Asked Questions
