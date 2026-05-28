@@ -143,10 +143,10 @@ const Services = () => {
           }
         `}</style>
 
-        <h1 className="text-center font-extrabold text-gray-100 text-4xl sm:text-5xl mb-6">
+        <h1 className="text-center font-extrabold text-gray-100 text-4xl sm:text-5xl mb-6 font-[family-name:var(--font-poppins)]">
           My Services
         </h1>
-        <p className="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto font-[family-name:var(--font-inter)]">
           I offer comprehensive solutions across different service categories. Click on a tab to explore.
         </p>
 
@@ -156,7 +156,7 @@ const Services = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`tab-button relative px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-cyan-500/30 ${
+              className={`tab-button relative px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-cyan-500/30 font-[family-name:var(--font-sora)] ${
                 activeTab === tab
                   ? "text-cyan-400 bg-gradient-to-r from-cyan-500/10 to-blue-500/10"
                   : "text-gray-400 hover:text-cyan-300 hover:border-cyan-500/50"
@@ -188,12 +188,12 @@ const Services = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-100 mb-4 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-100 mb-4 group-hover:text-cyan-300 transition-colors font-[family-name:var(--font-manrope)]">
                   {service.Name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors">
+                <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors font-[family-name:var(--font-inter)]">
                   {service.Service}
                 </p>
 
@@ -202,7 +202,7 @@ const Services = () => {
                   {service.Details.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="text-cyan-400 mt-1.5 flex-shrink-0">✓</span>
-                      <span className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                      <span className="text-gray-400 group-hover:text-gray-300 transition-colors font-[family-name:var(--font-jetbrains-mono)]">
                         {item}
                       </span>
                     </li>
@@ -211,7 +211,7 @@ const Services = () => {
 
                 {/* Footer */}
                 <div className="pt-6 border-t border-cyan-500/10 group-hover:border-cyan-500/30 transition-colors">
-                  <p className="text-xs text-cyan-400/70 group-hover:text-cyan-400 transition-colors font-semibold">
+                  <p className="text-xs text-cyan-400/70 group-hover:text-cyan-400 transition-colors font-semibold font-[family-name:var(--font-inter)]">
                     ✨ Premium Quality Solutions
                   </p>
                 </div>

@@ -104,7 +104,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/" className="logo">
+          <Link href="/" className="logo font-[family-name:var(--font-sora)]">
             SSB
           </Link>
         </div>
@@ -113,25 +113,25 @@ const Navbar = () => {
         <ul className="hidden min-[1021px]:flex gap-3 items-center mx-auto">
 
           <li>
-            <Link href="/" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10">
+            <Link href="/" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 font-[family-name:var(--font-inter)]">
               <Home size={18} /> Home
             </Link>
           </li>
 
           <li>
-            <Link href="#About" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10">
+            <Link href="#About" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 font-[family-name:var(--font-inter)]">
               <User2 size={18} /> About
             </Link>
           </li>
 
           <li>
-            <Link href="#Projects" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10">
+            <Link href="#Projects" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 font-[family-name:var(--font-inter)]">
               <FolderGit size={18} /> Projects
             </Link>
           </li>
 
           <li>
-            <Link href="#services" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10">
+            <Link href="#services" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 font-[family-name:var(--font-inter)]">
               <Code size={18} /> Services
             </Link>
           </li>
@@ -140,14 +140,14 @@ const Navbar = () => {
             <Link
               href="https://github.com/ShahnawazSaddam16?tab=repositories"
               target="_blank"
-              className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10"
+              className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 font-[family-name:var(--font-inter)]"
             >
               <GithubIcon size={20} /> GitHub
             </Link>
           </li>
 
           <li>
-            <Link href="#Contact" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10">
+            <Link href="#Contact" className="nav-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 font-[family-name:var(--font-inter)]">
               <Phone size={18} /> Contact
             </Link>
           </li>
@@ -165,7 +165,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="mobileMenu min-[1021px]:hidden mt-4 space-y-3 mx-auto text-center rounded-2xl py-6 backdrop-blur-xl bg-gradient-to-b from-slate-800/90 to-slate-900/90 border border-slate-700/30 shadow-2xl">
+        <ul className="mobileMenu min-[1021px]:hidden mt-4 space-y-3 mx-auto text-center rounded-2xl py-6 backdrop-blur-xl bg-gradient-to-b from-slate-800/90 to-slate-900/90 border border-slate-700/30 shadow-2xl font-[family-name:var(--font-inter)]">
 
           <li>
             <Link href="/" className="flex items-center justify-center gap-2 py-2 text-gray-300 hover:text-cyan-400">

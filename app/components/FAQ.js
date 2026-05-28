@@ -76,10 +76,10 @@ const FAQ = () => {
       {/* Header */}
       <section className="mt-20 px-4 sm:px-8">
         <header className="flex justify-center flex-col items-center text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-[family-name:var(--font-poppins)]">
             Frequently Asked Questions
           </h1>
-          <p className="mt-4 text-gray-400 text-lg sm:text-xl font-medium max-w-2xl">
+          <p className="mt-4 text-gray-400 text-lg sm:text-xl font-medium max-w-2xl font-[family-name:var(--font-inter)]">
             Everything you need to know about my work, process, and how I can help your business.
           </p>
         </header>
@@ -103,7 +103,7 @@ const FAQ = () => {
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex justify-between items-center gap-4 p-6 text-left hover:bg-cyan-500/5 transition-colors"
                 >
-                  <h1 className="font-bold text-gray-100 group-hover:text-cyan-300 text-base sm:text-lg transition-colors flex-1">
+                  <h1 className="font-bold text-gray-100 group-hover:text-cyan-300 text-base sm:text-lg transition-colors flex-1 font-[family-name:var(--font-sora)]">
                     {item.question}
                   </h1>
                   <ChevronDown
@@ -120,7 +120,7 @@ const FAQ = () => {
                   }`}
                 >
                   <div className={`px-6 pb-6 border-t border-cyan-500/10 faq-item-enter ${openIndex === index ? '' : 'hidden'}`}>
-                    <p className="text-gray-300 text-base leading-relaxed">
+                    <p className="text-gray-300 text-base leading-relaxed font-[family-name:var(--font-inter)]">
                       {item.answer}
                     </p>
                   </div>

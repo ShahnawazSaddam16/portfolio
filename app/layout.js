@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Inter, JetBrains_Mono, Manrope, Sora, Urbanist } from "next/font/google";
 import "./globals.css";
 import Footer from './components/Footer';
 import BgAnimations from "./components/BgAnimations";
@@ -10,6 +10,42 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["300", "400", "600", "700", "800"],
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  weight: ["400", "600", "700", "800"],
+  subsets: ["latin"],
+});
+
+const sora = Sora({
+  variable: "--font-sora",
+  weight: ["300", "400", "600", "700"],
+  subsets: ["latin"],
+});
+
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
+  weight: ["400", "600", "700", "800"],
   subsets: ["latin"],
 });
 
@@ -63,7 +99,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${inter.variable} ${jetbrainsMono.variable} ${manrope.variable} ${sora.variable} ${urbanist.variable} antialiased`}
       >
       <BgAnimations />
         {children}

@@ -114,10 +114,10 @@ const Skills = () => {
       `}</style>
 
       <div className="text-center mb-16">
-        <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+        <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 font-[family-name:var(--font-manrope)]">
           💼 Tech Stack
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto font-[family-name:var(--font-inter)]">
           Technologies and tools I specialize in for building scalable solutions
         </p>
       </div>
@@ -155,10 +155,10 @@ const SkillCard = ({ category, idx }) => (
 
     <div className="relative z-10">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent font-[family-name:var(--font-poppins)]">
           {category.title}
         </h2>
-        <span className="text-xs text-cyan-400/60 font-semibold">
+        <span className="text-xs text-cyan-400/60 font-semibold font-[family-name:var(--font-jetbrains-mono)]">
           {category.skills.length} SKILLS
         </span>
       </div>
@@ -167,7 +167,7 @@ const SkillCard = ({ category, idx }) => (
         {category.skills.map((skill, i) => (
           <div
             key={i}
-            className="skill-item p-4 rounded-xl bg-slate-900/60 border border-blue-500/30 hover:border-cyan-400/60 flex flex-col items-center gap-2 group/item"
+            className="skill-item p-4 rounded-xl bg-slate-900/60 border border-blue-500/30 hover:border-cyan-400/60 flex flex-col items-center gap-2 group/item font-[family-name:var(--font-inter)]"
             style={{ animationDelay: `${i * 0.05}s` }}
           >
             <div className="text-3xl group-hover/item:scale-110 transition-all duration-300">

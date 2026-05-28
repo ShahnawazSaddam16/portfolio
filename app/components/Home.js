@@ -109,17 +109,17 @@ const Home_ = () => {
                   </div>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 gradient-shift">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 gradient-shift font-[family-name:var(--font-poppins)]">
                   Shahnawaz Saddam Butt
                 </h1>
 
-                <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-300 mb-6">
+                <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-300 mb-6 font-[family-name:var(--font-sora)]">
                   Building Beautiful & Scalable Digital Solutions
                 </p>
 
                 <div className="flex justify-center items-center mb-8">
                   <div className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30">
-                    <span className="text-lg md:text-2xl font-bold text-cyan-300">
+                    <span className="text-lg md:text-2xl font-bold text-cyan-300 font-[family-name:var(--font-poppins)]">
                       {text}
                       <span className="animate-pulse text-cyan-400 ml-1">
                         |
@@ -128,7 +128,7 @@ const Home_ = () => {
                   </div>
                 </div>
 
-                <p className="text-gray-300 text-sm md:text-base mb-8 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-gray-300 text-sm md:text-base mb-8 max-w-2xl mx-auto leading-relaxed font-[family-name:var(--font-inter)]">
                   I create modern, fast, and fully responsive web applications.
                   Specializing in React, Next.js, and full-stack development
                   with a focus on user experience and performance.
@@ -136,25 +136,25 @@ const Home_ = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                   <Link href="/About">
-                    <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-lg">
+                    <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-lg font-[family-name:var(--font-inter)]">
                       View My Work
                     </button>
                   </Link>
 
                   <Link href="/Contact">
-                    <button className="px-8 py-3 border-2 border-cyan-500 text-cyan-400 font-bold rounded-lg">
+                    <button className="px-8 py-3 border-2 border-cyan-500 text-cyan-400 font-bold rounded-lg font-[family-name:var(--font-inter)]">
                       Get In Touch
                     </button>
                   </Link>
                 </div>
 
                 <div className="pt-8 border-t border-cyan-500/20">
-                  <p className="text-gray-400 text-sm mb-4 flex items-center justify-center gap-2">
+                  <p className="text-gray-400 text-sm mb-4 flex items-center justify-center gap-2 font-[family-name:var(--font-inter)]">
                     <Code2 className="w-4 h-4" />
                     Currently working with
                   </p>
                   <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 border border-slate-600/30">
-                    <span className="text-cyan-300 font-semibold text-sm md:text-base">
+                    <span className="text-cyan-300 font-semibold text-sm md:text-base font-[family-name:var(--font-jetbrains-mono)]">
                       {techText}
                       <span className="animate-pulse text-blue-400 ml-1">
                         ▌
