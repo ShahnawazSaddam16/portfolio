@@ -191,7 +191,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-3">
 
           <Link
-            href="https://github.com/"
+            href="https://github.com/ShahnawazSaddam16?tab=repositories"
             target="_blank"
             className="social-icon h-11 w-11 rounded-xl flex items-center justify-center text-gray-300 hover:text-cyan-400"
           >
@@ -199,7 +199,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="https://instagram.com/"
+            href="https://www.instagram.com/shahnawaz_x_butt/?hl=en"
             target="_blank"
             className="social-icon h-11 w-11 rounded-xl flex items-center justify-center text-gray-300 hover:text-pink-400"
           >
@@ -284,7 +284,7 @@ const Navbar = () => {
           <div className="flex items-center justify-center gap-4 mt-8">
 
             <Link
-              href="https://github.com/"
+              href="https://github.com/ShahnawazSaddam16?tab=repositories"
               target="_blank"
               className="social-icon h-11 w-11 rounded-xl flex items-center justify-center text-gray-300 hover:text-cyan-400"
             >
@@ -292,7 +292,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="https://instagram.com/"
+              href="https://www.instagram.com/shahnawaz_x_butt/?hl=en"
               target="_blank"
               className="social-icon h-11 w-11 rounded-xl flex items-center justify-center text-gray-300 hover:text-pink-400"
             >
