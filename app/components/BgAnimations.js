@@ -1,6 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 
 const BgAnimations = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  if (isMobile) return null;
+
   return (
     <>
       <style>{`
@@ -41,22 +54,6 @@ const BgAnimations = () => {
           0%, 100% { r: 1.8; opacity: 0.35; }
           50% { r: 3.2; opacity: 0.85; }
         }
-        @keyframes rotateSlow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        @keyframes rotateReverse {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(-360deg); }
-        }
-        @keyframes shimmerRing {
-          0%, 100% { stroke-dashoffset: 0; opacity: 0.12; }
-          50% { stroke-dashoffset: -160; opacity: 0.28; }
-        }
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.1; transform: scale(0.8); }
-          50% { opacity: 0.7; transform: scale(1.2); }
-        }
         @keyframes hexFloat {
           0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.06; }
           50% { transform: translateY(-22px) rotate(8deg); opacity: 0.14; }
@@ -64,27 +61,6 @@ const BgAnimations = () => {
         @keyframes hexFloat2 {
           0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.05; }
           50% { transform: translateY(18px) rotate(-6deg); opacity: 0.12; }
-        }
-        @keyframes cornerTrace {
-          0% { stroke-dashoffset: 200; opacity: 0; }
-          20% { opacity: 0.6; }
-          80% { opacity: 0.6; }
-          100% { stroke-dashoffset: 0; opacity: 0; }
-        }
-
-        @media (max-width: 768px) {
-          svg {
-            transform: scale(0.9);
-            transform-origin: center;
-          }
-          ellipse,
-          path,
-          polygon,
-          rect,
-          circle,
-          line {
-            opacity: 0.6 !important;
-          }
         }
       `}</style>
 
@@ -117,10 +93,6 @@ const BgAnimations = () => {
             <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#0891b2" stopOpacity="0.12" />
               <stop offset="100%" stopColor="#0891b2" stopOpacity="0" />
-            </radialGradient>
-            <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.06" />
-              <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
             </radialGradient>
           </defs>
 
