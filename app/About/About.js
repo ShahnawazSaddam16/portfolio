@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import { Award, Code, Zap } from "lucide-react";
+import { Award, Code, Star, Zap } from "lucide-react";
 
 const getLiveTime = () => new Date().toLocaleTimeString();
 const getLearningDays = () => {
@@ -189,9 +189,65 @@ const About = () => {
 
         {/* Journey Timeline */}
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            My Journey
-          </h2>
+          {/* Title */}
+          <div className="flex flex-col items-center justify-center mb-16 relative">
+            <div className="absolute w-72 h-72 bg-cyan-500/10 blur-3xl rounded-full top-[-120px]" />
+
+            <div className="flex items-center gap-5 relative z-10">
+              <div className="h-[1px] w-20 bg-gradient-to-r from-transparent via-cyan-400 to-cyan-500 shadow-[0_0_20px_rgba(34,211,238,0.7)]" />
+
+              <div className="relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-cyan-400/20 blur-2xl rounded-full scale-150" />
+
+                <h2
+                  className="
+          relative
+          text-[clamp(28px,5vw,52px)]
+          font-black
+          tracking-[-0.04em]
+          uppercase
+          bg-gradient-to-r
+          from-cyan-300
+          via-sky-200
+          to-violet-400
+          bg-clip-text
+          text-transparent
+          font-[family-name:var(--font-urbanist)]
+          drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]
+        "
+                >
+                  Learning Timeline
+                </h2>
+              </div>
+
+              <div className="h-[1px] w-20 bg-gradient-to-l from-transparent via-cyan-400 to-cyan-500 shadow-[0_0_20px_rgba(34,211,238,0.7)]" />
+            </div>
+
+            <p
+              className="
+      mt-5
+      text-center
+      max-w-2xl
+      text-slate-400
+      text-[14px]
+      leading-7
+      tracking-wide
+      font-[family-name:var(--font-inter)]
+    "
+            >
+              A journey through my growth as a Full Stack Developer, building
+              modern applications, scalable systems, and immersive digital
+              experiences.
+            </p>
+
+            <div className="mt-7 flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_18px_#22d3ee]" />
+              <div className="w-16 h-[1px] bg-gradient-to-r from-cyan-400 to-transparent" />
+              <div className="w-2 h-2 rounded-full bg-violet-400 shadow-[0_0_18px_#a855f7]" />
+              <div className="w-16 h-[1px] bg-gradient-to-l from-violet-400 to-transparent" />
+              <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_18px_#22d3ee]" />
+            </div>
+          </div>
 
           <div className="relative">
             <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-500 via-blue-500 to-purple-500"></div>
