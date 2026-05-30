@@ -67,9 +67,170 @@ function useInView(ref) {
   return inView;
 }
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.matchMedia("(hover: none) and (pointer: coarse)").matches);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile;
+}
+
+function RepoPopup({ frontendRepo, backendRepo }) {
+  const [open, setOpen] = useState(false);
+  const popupRef = useRef(null);
+  const btnRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function handleClick(e) {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(e.target) &&
+        btnRef.current &&
+        !btnRef.current.contains(e.target)
+      ) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("touchstart", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("touchstart", handleClick);
+    };
+  }, [open]);
+
+  return (
+    <div style={{ position: "relative", display: "inline-block" }}>
+      <button
+        ref={btnRef}
+        onClick={() => setOpen((v) => !v)}
+        style={{
+          border: "1px solid rgba(34,211,238,0.3)",
+          color: "#a5f3fc",
+          padding: "12px 18px",
+          borderRadius: "14px",
+          fontSize: "13px",
+          fontWeight: 700,
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          background: "rgba(255,255,255,0.02)",
+          cursor: "pointer",
+          outline: "none",
+        }}
+      >
+        <Github size={15} />
+        Repo
+        <ChevronUp
+          size={13}
+          style={{
+            transform: open ? "rotate(0deg)" : "rotate(180deg)",
+            transition: "transform 0.25s ease",
+          }}
+        />
+      </button>
+
+      {open && (
+        <div
+          ref={popupRef}
+          style={{
+            position: "absolute",
+            bottom: "calc(100% + 10px)",
+            left: "0",
+            background: "linear-gradient(135deg, rgba(7,21,27,0.98) 0%, rgba(8,38,47,0.98) 100%)",
+            border: "1px solid rgba(34,211,238,0.25)",
+            borderRadius: "14px",
+            padding: "10px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            minWidth: "160px",
+            boxShadow: "0 -8px 32px rgba(0,0,0,0.55), 0 0 20px rgba(34,211,238,0.08)",
+            backdropFilter: "blur(16px)",
+            zIndex: 100,
+            animation: "popupFadeIn 0.2s cubic-bezier(.22,1,.36,1)",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              bottom: "-6px",
+              left: "20px",
+              width: "10px",
+              height: "10px",
+              background: "rgba(8,38,47,0.98)",
+              border: "1px solid rgba(34,211,238,0.25)",
+              borderTop: "none",
+              borderLeft: "none",
+              transform: "rotate(45deg)",
+            }}
+          />
+
+          <a
+            href={frontendRepo}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              border: "1px solid rgba(34,211,238,0.3)",
+              color: "#a5f3fc",
+              padding: "10px 14px",
+              borderRadius: "10px",
+              fontSize: "13px",
+              fontWeight: 700,
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              background: "rgba(34,211,238,0.05)",
+              transition: "background 0.2s ease",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(34,211,238,0.12)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(34,211,238,0.05)")}
+          >
+            <Code2 size={14} />
+            Frontend
+          </a>
+
+          <a
+            href={backendRepo}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              border: "1px solid rgba(129,140,248,0.3)",
+              color: "#c7d2fe",
+              padding: "10px 14px",
+              borderRadius: "10px",
+              fontSize: "13px",
+              fontWeight: 700,
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              background: "rgba(99,102,241,0.05)",
+              transition: "background 0.2s ease",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(99,102,241,0.12)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(99,102,241,0.05)")}
+          >
+            <Server size={14} />
+            Backend
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ProjectCard({ project, index }) {
   const ref = useRef(null);
   const inView = useInView(ref);
+  const isMobile = useIsMobile();
 
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -81,11 +242,13 @@ function ProjectCard({ project, index }) {
     ? project.gallery
     : [project.image];
 
+  const isActive = isMobile ? false : hovered;
+
   return (
     <div
       ref={ref}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => !isMobile && setHovered(true)}
+      onMouseLeave={() => !isMobile && setHovered(false)}
       style={{
         opacity: inView ? 1 : 0,
         transform: inView
@@ -96,10 +259,10 @@ function ProjectCard({ project, index }) {
         }s`,
         background:
           "linear-gradient(135deg, rgba(7,21,27,0.98) 0%, rgba(8,38,47,0.98) 50%, rgba(11,47,59,0.98) 100%)",
-        border: hovered
+        border: isActive
           ? "1px solid rgba(34,211,238,0.4)"
           : "1px solid rgba(34,211,238,0.12)",
-        boxShadow: hovered
+        boxShadow: isActive
           ? "0 0 0 1px rgba(34,211,238,0.08), 0 35px 90px rgba(0,0,0,0.65), 0 0 55px rgba(34,211,238,0.12)"
           : "0 12px 40px rgba(0,0,0,0.45)",
         borderRadius: "24px",
@@ -115,10 +278,10 @@ function ProjectCard({ project, index }) {
         style={{
           position: "absolute",
           inset: 0,
-          background: hovered
+          background: isActive
             ? "radial-gradient(circle at top, rgba(34,211,238,0.08), transparent 65%)"
             : "none",
-          transition: "0.5s ease",
+          transition: isMobile ? "none" : "0.5s ease",
           zIndex: 0,
         }}
       />
@@ -510,53 +673,10 @@ function ProjectCard({ project, index }) {
               Live Demo
             </a>
 
-            <a
-              href={project.frontendRepo}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                border:
-                  "1px solid rgba(34,211,238,0.3)",
-                color: "#a5f3fc",
-                padding: "12px 18px",
-                borderRadius: "14px",
-                fontSize: "13px",
-                fontWeight: 700,
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                background:
-                  "rgba(255,255,255,0.02)",
-              }}
-            >
-              <Code2 size={15} />
-              Frontend
-            </a>
-
-            <a
-              href={project.backendRepo}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                border:
-                  "1px solid rgba(129,140,248,0.3)",
-                color: "#c7d2fe",
-                padding: "12px 18px",
-                borderRadius: "14px",
-                fontSize: "13px",
-                fontWeight: 700,
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                background:
-                  "rgba(255,255,255,0.02)",
-              }}
-            >
-              <Server size={15} />
-              Backend
-            </a>
+            <RepoPopup
+              frontendRepo={project.frontendRepo}
+              backendRepo={project.backendRepo}
+            />
           </div>
         </div>
       </div>
@@ -626,6 +746,17 @@ export default function Projects({
           50%{
             opacity:1;
             transform:scaleX(1);
+          }
+        }
+
+        @keyframes popupFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(6px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
       `}</style>
