@@ -132,51 +132,6 @@ export const projects = [
   },
 
   {
-    slug: "adminpanel-website",
-    Heading: "Admin Panel",
-    Text: "A comprehensive admin panel to manage website content, user interactions, and settings efficiently with a responsive full-stack interface.",
-    description:
-      "This Admin Panel was engineered for teams that need control without complexity. It features role-based access control so different team members see only what they need, granular content management tools, and a full audit log for accountability. The backend was built with scalability in mind, supporting batch operations and background jobs as the platform grows.",
-    demoLink: "https://admin-dashboard.buttnetworks.com",
-    frontendRepo: "https://github.com/ShahanwazSaddam144/admin-panel",
-    image: "/ProjectImages/adminhome.png",
-    gallery: [
-      "/ProjectImages/adminhome.png",
-      "/ProjectImages/adminhome.png",
-    ],
-    technologies: [
-      "Next.js",
-      "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-    ],
-    author: "Shahnawaz Saddam Butt",
-    email: "shahnawazsaddamb@gmail.com",
-    startDate: "Apr 5, 2024",
-    endDate: "May 1, 2024",
-    status: "Completed",
-    role: "Full Stack Developer",
-    category: "Admin Dashboard",
-    features: [
-      "Role-based access control with permission layers",
-      "Full content management with rich text editor",
-      "Audit logs for every user action",
-      "Batch operations and background job support",
-    ],
-    challenges: [
-      "Designing a permission system flexible enough for varied team structures",
-      "Keeping the UI fast and responsive with large datasets",
-      "Building reliable background job processing without a queue service",
-    ],
-    outcomes: [
-      "Team onboarding completed within one day of delivery",
-      "Reduced manual content update time by over 60%",
-      "Zero security incidents since deployment",
-    ],
-  },
-
-  {
     slug: "opinion-nest-website",
     Heading: "Opinion Nest",
     Text: "An AI-powered opinion and review platform where users can share, rate, and discuss opinions, supported by an intelligent chatbot for guided interactions.",
