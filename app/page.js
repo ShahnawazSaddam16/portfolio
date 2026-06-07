@@ -5,10 +5,10 @@ import About from './About/About';
 import Projects from './components/Projects';
 import Services from './components/Services';
 import FAQ from './components/FAQ';
-import Hackathon from './components/Hackathon';
 import GithubSection from './components/GithubSection';
 import Contact from './Contact/Contact';
 import BgAnimations from './components/BgAnimations';
+import Chatbot from './components/Chatbot';
 
 export default function Home() {
   return (
@@ -19,6 +19,7 @@ export default function Home() {
     <About />
     <Projects />
     <Services />
+    <Chatbot />
     <FAQ />
     <Contact />
     </>
