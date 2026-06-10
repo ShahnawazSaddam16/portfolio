@@ -250,6 +250,8 @@ function ProjectCard({ project, index }) {
 
   const isActive = isMobile ? false : hovered;
 
+  const isSpotify = project.slug === "spotifyclone-app";
+
   return (
     <div
       ref={ref}
@@ -317,13 +319,16 @@ function ProjectCard({ project, index }) {
                     position: "relative",
                     width: "100%",
                     height: "240px",
+                    background: isSpotify ? "#000" : "transparent",
                   }}
                 >
                   <Image
                     src={img}
                     alt={project.Heading}
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{
+                      objectFit: isSpotify ? "contain" : "cover",
+                    }}
                   />
                   <div
                     style={{
@@ -629,9 +634,9 @@ function ProjectCard({ project, index }) {
                 gap: "8px",
                 transition: "0.3s ease",
               }}
-            >
-              <ExternalLink size={15} />
-              Live Demo
+              >
+                <ExternalLink size={15} />
+                Live Demo
             </a>
 
             <RepoPopup
@@ -692,6 +697,7 @@ export default function Projects({ limit = 10, single = false }) {
         .projects-swiper .swiper-slide {
           height: auto !important;
           align-self: flex-start !important;
+          display: block !important;
         }
         @keyframes pulseLine {
           0%, 100% { opacity: .5; transform: scaleX(.9); }
