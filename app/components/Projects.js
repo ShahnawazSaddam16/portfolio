@@ -17,7 +17,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
   Pagination,
-  Autoplay,
   EffectFade,
 } from "swiper/modules";
 
@@ -51,18 +50,15 @@ function useInView(ref) {
 
   useEffect(() => {
     if (!ref.current) return;
-
     const obs = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) setInView(true);
       },
       { threshold: 0.15 }
     );
-
     obs.observe(ref.current);
-
     return () => obs.disconnect();
-  }, []);
+  }, [ref]);
 
   return inView;
 }
@@ -71,7 +67,10 @@ function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const check = () => setIsMobile(window.matchMedia("(hover: none) and (pointer: coarse)").matches);
+    const check = () =>
+      setIsMobile(
+        window.matchMedia("(hover: none) and (pointer: coarse)").matches
+      );
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
@@ -143,7 +142,8 @@ function RepoPopup({ frontendRepo, backendRepo }) {
             position: "absolute",
             bottom: "calc(100% + 10px)",
             left: "0",
-            background: "linear-gradient(135deg, rgba(7,21,27,0.98) 0%, rgba(8,38,47,0.98) 100%)",
+            background:
+              "linear-gradient(135deg, rgba(7,21,27,0.98) 0%, rgba(8,38,47,0.98) 100%)",
             border: "1px solid rgba(34,211,238,0.25)",
             borderRadius: "14px",
             padding: "10px",
@@ -151,7 +151,8 @@ function RepoPopup({ frontendRepo, backendRepo }) {
             flexDirection: "column",
             gap: "8px",
             minWidth: "160px",
-            boxShadow: "0 -8px 32px rgba(0,0,0,0.55), 0 0 20px rgba(34,211,238,0.08)",
+            boxShadow:
+              "0 -8px 32px rgba(0,0,0,0.55), 0 0 20px rgba(34,211,238,0.08)",
             backdropFilter: "blur(16px)",
             zIndex: 100,
             animation: "popupFadeIn 0.2s cubic-bezier(.22,1,.36,1)",
@@ -190,8 +191,12 @@ function RepoPopup({ frontendRepo, backendRepo }) {
               background: "rgba(34,211,238,0.05)",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(34,211,238,0.12)")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(34,211,238,0.05)")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "rgba(34,211,238,0.12)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "rgba(34,211,238,0.05)")
+            }
           >
             <Code2 size={14} />
             Frontend
@@ -215,8 +220,12 @@ function RepoPopup({ frontendRepo, backendRepo }) {
               background: "rgba(99,102,241,0.05)",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(99,102,241,0.12)")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(99,102,241,0.05)")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "rgba(99,102,241,0.12)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "rgba(99,102,241,0.05)")
+            }
           >
             <Server size={14} />
             Backend
@@ -235,12 +244,9 @@ function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
-  const status =
-    statusConfig[project.status] || statusConfig.default;
+  const status = statusConfig[project.status] || statusConfig.default;
 
-  const images = project.gallery?.length
-    ? project.gallery
-    : [project.image];
+  const images = project.gallery?.length ? project.gallery : [project.image];
 
   const isActive = isMobile ? false : hovered;
 
@@ -254,9 +260,7 @@ function ProjectCard({ project, index }) {
         transform: inView
           ? "translateY(0) scale(1)"
           : "translateY(48px) scale(0.97)",
-        transition: `all 0.8s cubic-bezier(.22,1,.36,1) ${
-          index * 0.1
-        }s`,
+        transition: `all 0.8s cubic-bezier(.22,1,.36,1) ${index * 0.1}s`,
         background:
           "linear-gradient(135deg, rgba(7,21,27,0.98) 0%, rgba(8,38,47,0.98) 50%, rgba(11,47,59,0.98) 100%)",
         border: isActive
@@ -271,7 +275,7 @@ function ProjectCard({ project, index }) {
         backdropFilter: "blur(14px)",
         display: "flex",
         flexDirection: "column",
-        height: "100%",
+        width: "100%",
       }}
     >
       <div
@@ -292,19 +296,14 @@ function ProjectCard({ project, index }) {
           zIndex: 1,
           display: "flex",
           flexDirection: "column",
-          height: "100%",
         }}
       >
         <div style={{ position: "relative" }}>
           <Swiper
-            modules={[Pagination, Autoplay, EffectFade]}
+            modules={[Pagination, EffectFade]}
             slidesPerView={1}
             effect="fade"
             pagination={{ clickable: true }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
             loop={images.length > 1}
             style={{
               width: "100%",
@@ -324,11 +323,8 @@ function ProjectCard({ project, index }) {
                     src={img}
                     alt={project.Heading}
                     fill
-                    style={{
-                      objectFit: "cover",
-                    }}
+                    style={{ objectFit: "cover" }}
                   />
-
                   <div
                     style={{
                       position: "absolute",
@@ -367,7 +363,6 @@ function ProjectCard({ project, index }) {
                 boxShadow: `0 0 12px ${status.dot}`,
               }}
             />
-
             <span
               style={{
                 color: status.color,
@@ -387,7 +382,6 @@ function ProjectCard({ project, index }) {
             padding: "26px",
             display: "flex",
             flexDirection: "column",
-            flex: 1,
           }}
         >
           <div
@@ -413,7 +407,6 @@ function ProjectCard({ project, index }) {
               >
                 {project.Heading}
               </h2>
-
               <div
                 style={{
                   color: "#94a3b8",
@@ -453,8 +446,7 @@ function ProjectCard({ project, index }) {
                 key={idx}
                 style={{
                   background: "rgba(34,211,238,0.08)",
-                  border:
-                    "1px solid rgba(34,211,238,0.18)",
+                  border: "1px solid rgba(34,211,238,0.18)",
                   color: "#a5f3fc",
                   padding: "6px 12px",
                   borderRadius: "999px",
@@ -471,8 +463,7 @@ function ProjectCard({ project, index }) {
           <div
             style={{
               background: "rgba(255,255,255,0.03)",
-              border:
-                "1px solid rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.08)",
               borderRadius: "16px",
               padding: "18px",
               display: "grid",
@@ -500,7 +491,6 @@ function ProjectCard({ project, index }) {
                 >
                   {label}
                 </div>
-
                 <div
                   style={{
                     color: "#f1f5f9",
@@ -518,7 +508,7 @@ function ProjectCard({ project, index }) {
           <button
             onClick={() => setExpanded(!expanded)}
             style={{
-              border: "none",
+              border: "1px solid rgba(34,211,238,0.16)",
               outline: "none",
               background:
                 "linear-gradient(135deg, rgba(34,211,238,0.1), rgba(99,102,241,0.12))",
@@ -532,17 +522,10 @@ function ProjectCard({ project, index }) {
               cursor: "pointer",
               marginBottom: expanded ? "20px" : "0",
               transition: "0.3s ease",
-              border:
-                "1px solid rgba(34,211,238,0.16)",
             }}
           >
             Read More
-
-            {expanded ? (
-              <ChevronUp size={18} />
-            ) : (
-              <ChevronDown size={18} />
-            )}
+            {expanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
           </button>
 
           <div
@@ -553,11 +536,7 @@ function ProjectCard({ project, index }) {
               opacity: expanded ? 1 : 0,
             }}
           >
-            <div
-              style={{
-                paddingTop: "18px",
-              }}
-            >
+            <div style={{ paddingTop: "18px" }}>
               <p
                 style={{
                   color: "#cbd5e1",
@@ -570,25 +549,11 @@ function ProjectCard({ project, index }) {
               </p>
 
               {[
-                {
-                  title: "Features",
-                  data: project.features,
-                },
-                {
-                  title: "Challenges",
-                  data: project.challenges,
-                },
-                {
-                  title: "Outcomes",
-                  data: project.outcomes,
-                },
+                { title: "Features", data: project.features },
+                { title: "Challenges", data: project.challenges },
+                { title: "Outcomes", data: project.outcomes },
               ].map((section, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    marginBottom: "22px",
-                  }}
-                >
+                <div key={idx} style={{ marginBottom: "22px" }}>
                   <h3
                     style={{
                       color: "#67e8f9",
@@ -600,7 +565,6 @@ function ProjectCard({ project, index }) {
                   >
                     {section.title}
                   </h3>
-
                   <div
                     style={{
                       display: "flex",
@@ -628,11 +592,9 @@ function ProjectCard({ project, index }) {
                             background: "#22d3ee",
                             marginTop: "9px",
                             flexShrink: 0,
-                            boxShadow:
-                              "0 0 10px #22d3ee",
+                            boxShadow: "0 0 10px #22d3ee",
                           }}
                         />
-
                         <span>{item}</span>
                       </div>
                     ))}
@@ -655,8 +617,7 @@ function ProjectCard({ project, index }) {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background:
-                  "linear-gradient(135deg,#06b6d4,#6366f1)",
+                background: "linear-gradient(135deg,#06b6d4,#6366f1)",
                 color: "#fff",
                 padding: "12px 18px",
                 borderRadius: "14px",
@@ -684,10 +645,7 @@ function ProjectCard({ project, index }) {
   );
 }
 
-export default function Projects({
-  limit = 10,
-  single = false,
-}) {
+export default function Projects({ limit = 10, single = false }) {
   const displayedProjects = single
     ? projects.slice(0, 1)
     : projects.slice(0, limit);
@@ -699,65 +657,49 @@ export default function Projects({
     <>
       <style>{`
         .projects-swiper .swiper-button-next,
-        .projects-swiper .swiper-button-prev{
-          width:48px;
-          height:48px;
-          background:rgba(7,21,27,0.88);
-          border:1px solid rgba(34,211,238,0.2);
-          border-radius:999px;
-          color:#67e8f9;
-          backdrop-filter:blur(10px);
-          transition:0.3s ease;
+        .projects-swiper .swiper-button-prev {
+          width: 48px;
+          height: 48px;
+          background: rgba(7,21,27,0.88);
+          border: 1px solid rgba(34,211,238,0.2);
+          border-radius: 999px;
+          color: #67e8f9;
+          backdrop-filter: blur(10px);
+          transition: 0.3s ease;
         }
-
         .projects-swiper .swiper-button-next:hover,
-        .projects-swiper .swiper-button-prev:hover{
-          background:rgba(34,211,238,0.12);
-          transform:scale(1.08);
-          border-color:rgba(34,211,238,0.4);
+        .projects-swiper .swiper-button-prev:hover {
+          background: rgba(34,211,238,0.12);
+          transform: scale(1.08);
+          border-color: rgba(34,211,238,0.4);
         }
-
         .projects-swiper .swiper-button-next::after,
-        .projects-swiper .swiper-button-prev::after{
-          font-size:14px;
-          font-weight:900;
+        .projects-swiper .swiper-button-prev::after {
+          font-size: 14px;
+          font-weight: 900;
         }
-
-        .projects-swiper .swiper-pagination-bullet{
-          background:rgba(103,232,249,0.4);
-          opacity:1;
+        .projects-swiper .swiper-pagination-bullet {
+          background: rgba(103,232,249,0.4);
+          opacity: 1;
         }
-
-        .projects-swiper .swiper-pagination-bullet-active{
-          background:#67e8f9;
-          transform:scale(1.3);
+        .projects-swiper .swiper-pagination-bullet-active {
+          background: #67e8f9;
+          transform: scale(1.3);
         }
-
-        .projects-swiper .swiper-slide{
-          height:auto;
+        .projects-swiper .swiper-wrapper {
+          align-items: flex-start !important;
         }
-
-        @keyframes pulseLine{
-          0%,100%{
-            opacity:.5;
-            transform:scaleX(.9);
-          }
-
-          50%{
-            opacity:1;
-            transform:scaleX(1);
-          }
+        .projects-swiper .swiper-slide {
+          height: auto !important;
+          align-self: flex-start !important;
         }
-
+        @keyframes pulseLine {
+          0%, 100% { opacity: .5; transform: scaleX(.9); }
+          50% { opacity: 1; transform: scaleX(1); }
+        }
         @keyframes popupFadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(6px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(6px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
 
@@ -785,11 +727,8 @@ export default function Projects({
             textAlign: "center",
             marginBottom: "70px",
             opacity: headingInView ? 1 : 0,
-            transform: headingInView
-              ? "translateY(0)"
-              : "translateY(24px)",
-            transition:
-              "all 0.8s cubic-bezier(.22,1,.36,1)",
+            transform: headingInView ? "translateY(0)" : "translateY(24px)",
+            transition: "all 0.8s cubic-bezier(.22,1,.36,1)",
             position: "relative",
             zIndex: 1,
           }}
@@ -837,11 +776,9 @@ export default function Projects({
                 height: "1px",
                 background:
                   "linear-gradient(to left, rgba(34,211,238,0.8), transparent)",
-                animation:
-                  "pulseLine 2.8s ease-in-out infinite",
+                animation: "pulseLine 2.8s ease-in-out infinite",
               }}
             />
-
             <div
               style={{
                 width: "7px",
@@ -851,71 +788,37 @@ export default function Projects({
                 boxShadow: "0 0 16px #22d3ee",
               }}
             />
-
             <div
               style={{
                 width: "70px",
                 height: "1px",
                 background:
                   "linear-gradient(to right, rgba(34,211,238,0.8), transparent)",
-                animation:
-                  "pulseLine 2.8s ease-in-out infinite",
+                animation: "pulseLine 2.8s ease-in-out infinite",
               }}
             />
           </div>
         </div>
 
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
+        <div style={{ position: "relative", zIndex: 1 }}>
           <Swiper
             className="projects-swiper"
-            modules={[
-              Navigation,
-              Pagination,
-              Autoplay,
-            ]}
+            modules={[Navigation, Pagination]}
             spaceBetween={28}
             navigation
             pagination={{ clickable: true }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
             breakpoints={{
-              0: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1280: {
-                slidesPerView: 3,
-              },
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1280: { slidesPerView: 3 },
             }}
-            style={{
-              paddingBottom: "60px",
-            }}
+            style={{ paddingBottom: "60px" }}
           >
-            {displayedProjects.map(
-              (project, index) => (
-                <SwiperSlide
-                  key={index}
-                  style={{
-                    height: "auto",
-                  }}
-                >
-                  <ProjectCard
-                    project={project}
-                    index={index}
-                  />
-                </SwiperSlide>
-              )
-            )}
+            {displayedProjects.map((project, index) => (
+              <SwiperSlide key={index}>
+                <ProjectCard project={project} index={index} />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </section>

@@ -223,4 +223,46 @@ export const projects = [
       "Successfully launched with paying users on day one",
     ],
   },
+
+  {
+    slug: "spotifyclone-app",
+    Heading: "Spotify-Clone",
+    Text: "A full-stack Spotify clone with music streaming, playlist management, and a real-time audio player — built to replicate the core Spotify experience.",
+    description:
+      "This Spotify Clone replicates the core Spotify experience with a full-stack architecture. Users can browse tracks, manage playlists, and stream audio through a custom-built real-time player. The frontend closely mirrors Spotify's UI with a dark theme, sidebar navigation, and responsive layout. The backend handles user authentication, track metadata, and audio streaming efficiently.",
+    demoLink: "https://expo.dev/accounts/shahnawaz_butt15/projects/Spotify-Clone/builds/5571bc0d-f965-409f-953c-b3ed5dbe5d11",
+    frontendRepo: "https://github.com/ShahnawazSaddam16/Spotify-Clone",
+    image: "/ProjectImages/SpotifyClone/Image1.png",
+    gallery: [
+      "/ProjectImages/SpotifyClone/welcome.jpeg",
+      "/ProjectImages/SpotifyClone/libaray.jpeg",
+    ],
+    technologies: [
+      "React Native",
+      "Native Wind",
+    ],
+    author: "Shahnawaz Saddam Butt",
+    email: "shahnawazsaddamb@gmail.com",
+    startDate: "Apr 1, 2026",
+    endDate: "Jun 1, 2026",
+    status: "Completed",
+    role: "Full Stack Developer",
+    category: "Music Streaming App",
+    features: [
+      "Real-time audio player with play, pause, skip, and seek controls",
+      "Playlist creation and management per user account",
+      "Browse and search tracks by artist, album, or genre",
+      "Spotify-inspired dark UI with responsive sidebar navigation",
+    ],
+    challenges: [
+      "Implementing seamless audio streaming with minimal buffering",
+      "Syncing player state across components in real time",
+      "Replicating Spotify's complex layout faithfully on all screen sizes",
+    ],
+    outcomes: [
+      "Audio streaming with under 200ms initial load latency",
+      "Pixel-accurate Spotify UI reproduction on desktop and mobile",
+      "Fully functional playlist system with persistent user data",
+    ],
+  },
 ];
