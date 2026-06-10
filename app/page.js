@@ -17,9 +17,9 @@ export default function Home() {
     <GithubSection />
     <Stack />
     <About />
+    <Chatbot />
     <Projects />
     <Services />
-    <Chatbot />
     <FAQ />
     <Contact />
     </>

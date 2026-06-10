@@ -71,14 +71,22 @@ const About = () => {
             About Me
           </h1>
 
-          <p className="text-xl text-center text-gray-300 max-w-3xl mx-auto mb-16 animate-fadeIn leading-relaxed">
-            I'm{" "}
-            <span className="text-cyan-400 font-bold">
-              Shahnawaz Saddam Butt
-            </span>
-            , a 16-year-old full-stack developer creating modern, responsive
-            websites with cutting-edge technologies.
-          </p>
+          {/* ── Intro paragraph with proper background ── */}
+          <div className="relative max-w-3xl mx-auto mb-16 animate-fadeIn">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-xl" />
+            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl px-8 py-8 text-center">
+              <p className="text-base text-gray-300 leading-8">
+                Hi, I'm Shahnawaz Saddam Butt — a self-taught full-stack developer who started
+                coding just over a year ago and hasn't stopped shipping since. I
+                build practical tools: web apps, backend services, and
+                AI-powered systems. Most recently I've placed in two consecutive
+                international hackathons — 37th out of 775 participants at Hack
+                for Humanity 2026 with EcoTracker. Both solo builds. I
+                care about making things that actually work — fast, reliable,
+                and grounded in real-world needs.
+              </p>
+            </div>
+          </div>
 
           {/* Info Cards Grid - 3D */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -192,52 +200,27 @@ const About = () => {
 
         {/* Journey Timeline */}
         <div className="max-w-5xl mx-auto">
-          {/* Title */}
           <div className="flex flex-col items-center justify-center mb-16 relative">
             <div className="absolute w-72 h-72 bg-cyan-500/10 blur-3xl rounded-full top-[-120px]" />
 
             <div className="flex items-center gap-5 relative z-10">
               <div className="h-[1px] w-20 bg-gradient-to-r from-transparent via-cyan-400 to-cyan-500 shadow-[0_0_20px_rgba(34,211,238,0.7)]" />
-
               <div className="relative flex items-center justify-center">
                 <div className="absolute inset-0 bg-cyan-400/20 blur-2xl rounded-full scale-150" />
-
                 <h2
                   className="
-          relative
-          text-[clamp(28px,5vw,52px)]
-          font-black
-          tracking-[-0.04em]
-          uppercase
-          bg-gradient-to-r
-          from-cyan-300
-          via-sky-200
-          to-violet-400
-          bg-clip-text
-          text-transparent
-          font-[family-name:var(--font-urbanist)]
-          drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]
-        "
+                    relative text-[clamp(28px,5vw,52px)] font-black tracking-[-0.04em] uppercase
+                    bg-gradient-to-r from-cyan-300 via-sky-200 to-violet-400 bg-clip-text text-transparent
+                    font-[family-name:var(--font-urbanist)] drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]
+                  "
                 >
                   Learning Timeline
                 </h2>
               </div>
-
               <div className="h-[1px] w-20 bg-gradient-to-l from-transparent via-cyan-400 to-cyan-500 shadow-[0_0_20px_rgba(34,211,238,0.7)]" />
             </div>
 
-            <p
-              className="
-      mt-5
-      text-center
-      max-w-2xl
-      text-slate-400
-      text-[14px]
-      leading-7
-      tracking-wide
-      font-[family-name:var(--font-inter)]
-    "
-            >
+            <p className="mt-5 text-center max-w-2xl text-slate-400 text-[14px] leading-7 tracking-wide font-[family-name:var(--font-inter)]">
               A journey through my growth as a Full Stack Developer, building
               modern applications, scalable systems, and immersive digital
               experiences.
@@ -254,7 +237,6 @@ const About = () => {
 
           <div className="relative">
             <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-500 via-blue-500 to-purple-500"></div>
-
             <div className="space-y-10">
               {[
                 {
@@ -296,23 +278,15 @@ const About = () => {
                 >
                   <div className="relative z-10">
                     <div
-                      className={`w-10 h-10 flex items-center justify-center rounded-full border-2 ${
-                        index === arr.length - 1
-                          ? "bg-purple-500 border-purple-500"
-                          : "bg-slate-900 border-cyan-400"
-                      }`}
+                      className={`w-10 h-10 flex items-center justify-center rounded-full border-2 ${index === arr.length - 1 ? "bg-purple-500 border-purple-500" : "bg-slate-900 border-cyan-400"}`}
                     >
                       <div
-                        className={`w-3 h-3 rounded-full ${
-                          index === arr.length - 1 ? "bg-white" : "bg-cyan-400"
-                        }`}
+                        className={`w-3 h-3 rounded-full ${index === arr.length - 1 ? "bg-white" : "bg-cyan-400"}`}
                       ></div>
                     </div>
                   </div>
-
                   <div className="flex-1 card-3d relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
                     <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 group-hover:border-cyan-500/40 rounded-2xl p-6 group-hover:animate-glow">
                       <h3 className="text-lg font-bold text-cyan-400 mb-2">
                         {item.title}
