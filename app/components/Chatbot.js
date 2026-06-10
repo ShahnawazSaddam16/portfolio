@@ -45,7 +45,7 @@ export default function Chatbot() {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div className="w-full max-w-6xl mx-auto p-6" id="chatbot">
       <div className="bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/95 border border-slate-700/40 rounded-2xl shadow-[0_20px_60px_rgba(2,6,23,0.8)] p-6 flex flex-col lg:flex-row gap-6">
         <div className="lg:w-1/2 flex flex-col justify-between gap-6">
           <div className="flex flex-col gap-4">

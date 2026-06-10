@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 import {
   Menu,
   X,
@@ -14,7 +14,9 @@ import {
   Instagram,
   Linkedin,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
+import { SiChatbot } from "react-icons/si";
+import { FaRobot } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -125,7 +127,6 @@ const Navbar = () => {
       `}</style>
 
       <div className="navbar-container max-w-7xl mx-auto rounded-3xl px-6 py-4 flex items-center justify-between">
-
         <Link
           href="/"
           className="logo-box h-14 w-14 rounded-2xl flex items-center justify-center text-xl font-black text-white tracking-widest"
@@ -136,7 +137,6 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-
           <li>
             <Link
               href="#About"
@@ -156,7 +156,15 @@ const Navbar = () => {
               Skills
             </Link>
           </li>
-
+          <li>
+            <Link
+              href="#chatbot"
+              className="nav-link flex items-center gap-2 text-gray-300 font-medium"
+            >
+              <FaRobot size={18} />
+              Chatbot
+            </Link>
+          </li>
           <li>
             <Link
               href="#Projects"
@@ -189,7 +197,6 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden lg:flex items-center gap-3">
-
           <Link
             href="https://github.com/ShahnawazSaddam16?tab=repositories"
             target="_blank"
@@ -213,7 +220,6 @@ const Navbar = () => {
           >
             <Linkedin size={19} />
           </Link>
-
         </div>
 
         <button
@@ -226,9 +232,7 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="mobile-menu lg:hidden mt-4 rounded-3xl p-6 max-w-7xl mx-auto">
-
           <ul className="flex flex-col gap-5 text-center">
-
             <li>
               <Link
                 href="#About"
@@ -248,7 +252,15 @@ const Navbar = () => {
                 Skills
               </Link>
             </li>
-
+            <li>
+              <Link
+                href="#chatbot"
+                className="flex items-center justify-center gap-2 text-gray-300 hover:text-cyan-400"
+              >
+                <FaRobot size={18} />
+                Chatbot
+              </Link>
+            </li>
             <li>
               <Link
                 href="#Projects"
@@ -278,11 +290,9 @@ const Navbar = () => {
                 FAQ
               </Link>
             </li>
-
           </ul>
 
           <div className="flex items-center justify-center gap-4 mt-8">
-
             <Link
               href="https://github.com/ShahnawazSaddam16?tab=repositories"
               target="_blank"
@@ -306,7 +316,6 @@ const Navbar = () => {
             >
               <Linkedin size={18} />
             </Link>
-
           </div>
         </div>
       )}
