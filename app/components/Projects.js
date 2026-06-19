@@ -84,6 +84,8 @@ function RepoPopup({ frontendRepo, backendRepo }) {
   const popupRef = useRef(null);
   const btnRef = useRef(null);
 
+  const hasBackend = backendRepo && backendRepo.trim() !== "";
+
   useEffect(() => {
     if (!open) return;
     function handleClick(e) {
@@ -103,6 +105,34 @@ function RepoPopup({ frontendRepo, backendRepo }) {
       document.removeEventListener("touchstart", handleClick);
     };
   }, [open]);
+
+  if (!hasBackend) {
+    return (
+      <a
+        href={frontendRepo}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          border: "1px solid rgba(34,211,238,0.3)",
+          color: "#a5f3fc",
+          padding: "12px 18px",
+          borderRadius: "14px",
+          fontSize: "13px",
+          fontWeight: 700,
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          background: "rgba(255,255,255,0.02)",
+          cursor: "pointer",
+          outline: "none",
+          textDecoration: "none",
+        }}
+      >
+        <Github size={15} />
+        Repo
+      </a>
+    );
+  }
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
@@ -262,7 +292,7 @@ function ProjectCard({ project, index }) {
         transform: inView
           ? "translateY(0) scale(1)"
           : "translateY(48px) scale(0.97)",
-        transition: `all 0.8s cubic-bezier(.22,1,.36,1) ${index * 0.1}s`,
+        transition: `opacity 0.8s cubic-bezier(.22,1,.36,1) ${index * 0.1}s, transform 0.8s cubic-bezier(.22,1,.36,1) ${index * 0.1}s, border 0.3s ease, box-shadow 0.3s ease`,
         background:
           "linear-gradient(135deg, rgba(7,21,27,0.98) 0%, rgba(8,38,47,0.98) 50%, rgba(11,47,59,0.98) 100%)",
         border: isActive
@@ -278,6 +308,7 @@ function ProjectCard({ project, index }) {
         display: "flex",
         flexDirection: "column",
         width: "100%",
+        alignSelf: "flex-start",
       }}
     >
       <div
@@ -634,9 +665,9 @@ function ProjectCard({ project, index }) {
                 gap: "8px",
                 transition: "0.3s ease",
               }}
-              >
-                <ExternalLink size={15} />
-                Live Demo
+            >
+              <ExternalLink size={15} />
+              Live Demo
             </a>
 
             <RepoPopup
