@@ -43,14 +43,12 @@ const Home_ = () => {
       if (!isDeleting) {
         setText(current.slice(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
-
         if (charIndex + 1 === current.length) {
           setTimeout(() => setIsDeleting(true), 1200);
         }
       } else {
         setText(current.slice(0, charIndex - 1));
         setCharIndex((prev) => prev - 1);
-
         if (charIndex - 1 === 0) {
           setIsDeleting(false);
           setMsgIndex((prev) => (prev + 1) % messages.length);
@@ -69,14 +67,12 @@ const Home_ = () => {
       if (!techDeleting) {
         setTechText(current.slice(0, techChar + 1));
         setTechChar((prev) => prev + 1);
-
         if (techChar + 1 === current.length) {
           setTimeout(() => setTechDeleting(true), 1000);
         }
       } else {
         setTechText(current.slice(0, techChar - 1));
         setTechChar((prev) => prev - 1);
-
         if (techChar - 1 === 0) {
           setTechDeleting(false);
           setTechIndex((prev) => (prev + 1) % techStacks.length);
@@ -95,16 +91,31 @@ const Home_ = () => {
             <div className="relative inline-block">
               <div className="relative bg-transparent p-8 md:p-12 rounded-3xl">
                 <div className="flex flex-col items-center mb-6">
-                  <div className="w-35 h-35 rounded-full overflow-hidden border border-cyan-500/30 mb-3">
-                    <Image
-                      src="/shahnawaz.jpeg"
-                      alt="profile"
-                      width={112}
-                      height={112}
-                      className="object-cover w-full h-full"
-                    />
+
+                  <div className="relative mt-6">
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 flex items-center gap-2 whitespace-nowrap z-10">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">
+                        Freelancer
+                      </span>
+                      <span className="px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">
+                        Developer
+                      </span>
+                      <span className="px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/30 text-purple-300">
+                        Engineer
+                      </span>
+                    </div>
+                    <div className="w-35 h-35 rounded-full overflow-hidden border border-cyan-500/30 mt-2">
+                      <Image
+                        src="/shahnawaz.jpeg"
+                        alt="profile"
+                        width={112}
+                        height={112}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
                   </div>
-                  <div className="text-xs text-cyan-400 uppercase tracking-widest">
+
+                  <div className="text-xs text-cyan-400 uppercase tracking-widest mt-3">
                     Developer • Engineer • Freelancer
                   </div>
                 </div>
@@ -121,9 +132,7 @@ const Home_ = () => {
                   <div className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30">
                     <span className="text-lg md:text-2xl font-bold text-cyan-300 font-[family-name:var(--font-poppins)]">
                       {text}
-                      <span className="animate-pulse text-cyan-400 ml-1">
-                        |
-                      </span>
+                      <span className="animate-pulse text-cyan-400 ml-1">|</span>
                     </span>
                   </div>
                 </div>
@@ -156,15 +165,14 @@ const Home_ = () => {
                   <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 border border-slate-600/30">
                     <span className="text-cyan-300 font-semibold text-sm md:text-base font-[family-name:var(--font-jetbrains-mono)]">
                       {techText}
-                      <span className="animate-pulse text-blue-400 ml-1">
-                        ▌
-                      </span>
+                      <span className="animate-pulse text-blue-400 ml-1">▌</span>
                     </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div className="mt-2">
             <div className="px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-500/10 to-amber-500/10">
               <div className="inline-flex items-center gap-3">
@@ -177,14 +185,8 @@ const Home_ = () => {
                 37th Rank Among 786 Participants
               </p>
               <div className="flex justify-center items-center text-center gap-3">
-                <a
-                  href="https://devpost.com/software/ecotracker-p05z4d"
-                  target="_blank"
-                >
-                  <button
-                    className="bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center
-                      font-semibold rounded-[5px] mt-3 px-4 py-1 cursor-pointer"
-                  >
+                <a href="https://devpost.com/software/ecotracker-p05z4d" target="_blank">
+                  <button className="bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center font-semibold rounded-[5px] mt-3 px-4 py-1 cursor-pointer">
                     View Project <ArrowRight size={20} />
                   </button>
                 </a>
