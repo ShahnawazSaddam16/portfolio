@@ -49,50 +49,49 @@ export const projects = [
   ],
 },
 
-  {
-    slug: "business-website",
-    Heading: "Business Website",
-    Text: "A professional business website with Dark Mode and Contact Form built using React, Node.js, Express, and MongoDB for full-stack functionality.",
-    description:
-      "This Business Website was crafted for conversions — fast lead capture, secure form handling, and a lightweight CMS for non-technical content updates. Dark Mode support was implemented across every component using CSS variables. Accessibility and analytics were built-in from day one, ensuring the site serves both users and search engines effectively.",
-    demoLink: "https://buttnetworks.com/",
-    frontendRepo: "https://github.com/ShahanwazSaddam144/Butt-Networks",
-    image: "/ProjectImages/ButtHome.png",
-    gallery: [
-      "/ProjectImages/ButtHome.png",
-      "/ProjectImages/ButtHome.png",
-    ],
-    technologies: [
-      "Next.js",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Tailwind CSS",
-    ],
-    author: "Shahnawaz Saddam Butt",
-    email: "shahnawazsaddamb@gmail.com",
-    startDate: "Nov 1, 2023",
-    endDate: "Dec 15, 2023",
-    status: "Completed",
-    role: "Full Stack Developer",
-    category: "Business Website",
-    features: [
-      "Dark Mode with system preference detection",
-      "Secure contact form with email notifications",
-      "Admin dashboard for content updates",
-      "Integrated analytics and conversion tracking",
-    ],
-    challenges: [
-      "Implementing seamless Dark Mode across all dynamic components",
-      "Securing the contact form against spam and injection attacks",
-      "Keeping page load times under 2 seconds on slow connections",
-    ],
-    outcomes: [
-      "Positive client feedback on design and usability",
-      "Zero downtime since launch",
-      "Admin team onboarded with no technical training required",
-    ],
-  },
+{
+  slug: "valuemax-website",
+  Heading: "Value Max",
+  Text: "A modern grocery store landing page built with Next.js and Tailwind CSS, featuring a clean interface, responsive layouts, promotional sections, and an optimized shopping experience.",
+  description:
+    "Value Max is a modern grocery store landing page designed to showcase fresh groceries, household essentials, beverages, frozen foods, bakery items, and everyday products through an engaging and responsive interface. The website focuses on delivering a smooth browsing experience with attractive promotional banners, featured product categories, bulk order information, contact details, and a clean navigation system. Every section was carefully crafted to ensure fast loading speeds, mobile responsiveness, SEO-friendly structure, and a visually appealing layout that encourages customers to explore products and visit the store. The interface emphasizes simplicity, accessibility, and performance while maintaining a professional design suitable for a growing retail grocery business.",
+  demoLink: "https://valuemax.com.pk/",
+  frontendRepo: "https://github.com/Valuemax-Carry/value-max",
+  image: "/ProjectImages/ButtHome.png",
+  gallery: [
+    "/ProjectImages/ValueMax/Image1.png",
+    "/ProjectImages/ValueMax/Image2.png",
+  ],
+  technologies: [
+    "Next.js",
+    "Tailwind CSS",
+  ],
+  author: "Shahnawaz Saddam Butt",
+  email: "shahnawazsaddamb@gmail.com",
+  startDate: "June 22, 2026",
+  endDate: "June 27, 2026",
+  status: "Completed",
+  role: "Full Stack Developer",
+  category: "Client Project",
+  features: [
+    "Responsive grocery store landing page",
+    "Modern promotional banners and featured categories",
+    "Bulk order information section",
+    "Contact section with store information",
+  ],
+  challenges: [
+    "Creating a fully responsive layout across all devices",
+    "Designing visually balanced product and promotional sections",
+    "Optimizing images and assets for fast page loading",
+  ],
+  outcomes: [
+    "Delivered a modern grocery store landing page with a clean and professional user interface that effectively highlights fresh groceries, household essentials, and promotional offers.",
+    "Achieved excellent responsiveness across desktop, tablet, and mobile devices, providing customers with a consistent browsing experience regardless of screen size.",
+    "Implemented a fast-loading frontend with optimized layouts and SEO-friendly structure, improving performance, accessibility, and search engine visibility.",
+    "Designed intuitive navigation and well-organized content sections, making it easier for visitors to explore categories, discover featured products, and access store information.",
+    "Created a scalable frontend architecture that allows future expansion with additional product categories, promotional campaigns, and e-commerce functionality without major redesign."
+  ],
+},
 
   {
     slug: "portfolio-website",
