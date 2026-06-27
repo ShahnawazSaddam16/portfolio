@@ -105,7 +105,7 @@ const Home_ = () => {
                     />
                   </div>
                   <div className="text-xs text-cyan-400 uppercase tracking-widest">
-                    Developer • Engineer • Creator
+                    Developer • Engineer • Freelancer
                   </div>
                 </div>
 

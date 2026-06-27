@@ -76,14 +76,16 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-xl" />
             <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl px-8 py-8 text-center">
               <p className="text-base text-gray-300 leading-8">
-                Hi, I'm Shahnawaz Saddam Butt — a self-taught full-stack developer who started
-                coding just over a year ago and hasn't stopped shipping since. I
-                build practical tools: web apps, backend services, and
-                AI-powered systems. Most recently I've placed in two consecutive
-                international hackathons — 37th out of 775 participants at Hack
-                for Humanity 2026 with EcoTracker. Both solo builds. I
-                care about making things that actually work — fast, reliable,
-                and grounded in real-world needs.
+                Hi, I'm Shahnawaz Saddam Butt — a self-taught full-stack
+                developer who started coding just over a year ago and hasn't
+                stopped shipping since. I build practical tools: web apps,
+                backend services, and AI-powered systems. Most recently I've
+                placed in two consecutive international hackathons — 37th out of
+                775 participants at Hack for Humanity 2026 with EcoTracker. Both
+                solo builds. I care about making things that actually work —
+                fast, reliable, and grounded in real-world needs. Completing my
+                first client and starting my new journey as a freelancer and
+                sucessfully made a best debut in field of freelancing.
               </p>
             </div>
           </div>
@@ -264,8 +266,8 @@ const About = () => {
                   desc: "🏆 Placed 37th at Hack for Humanity 2026 — built EcoTracker solo, an Backend Contoller waste classifier with gamified impact tracking, competing against 775 participants internationally.",
                 },
                 {
-                  title: "Now",
-                  desc: "Going deep on DSA, mathematics, and ML fundamentals — building the foundation for serious AI/ML research.",
+                  title: "June 2026",
+                  desc: "Completing my first client and starting my new journey as a freelancer and sucessfully made a best debut in field of freelancing.",
                 },
                 {
                   title: "Next",
