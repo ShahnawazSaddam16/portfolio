@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, EffectFade } from "swiper/modules";
+import { Navigation, Pagination, EffectFade } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -269,6 +269,7 @@ function ProjectCard({ project, index }) {
         display: "flex",
         flexDirection: "column",
         width: "100%",
+        height: "840px",
         alignSelf: "flex-start",
       }}
     >
@@ -547,8 +548,9 @@ export default function Projects({ limit = 10, single = false }) {
         <div style={{ position: "relative", zIndex: 1 }}>
           <Swiper
             className="projects-swiper"
-            modules={[]}
+            modules={[Navigation, Pagination]}
             spaceBetween={28}
+            navigation
             pagination={{ clickable: true }}
             breakpoints={{
               0: { slidesPerView: 1 },
