@@ -9,6 +9,7 @@ import GithubSection from './components/GithubSection';
 import Contact from './Contact/Contact';
 import BgAnimations from './components/BgAnimations';
 import Chatbot from './components/Chatbot';
+import Feedback from './components/Feedback';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
     <Stack />
     <About />
     <Chatbot />
+    <Feedback />
     <Projects />
     <Services />
     <FAQ />

@@ -251,7 +251,6 @@ export default function ProjectDetailPage({ params }) {
       <div
         style={{
           minHeight: "100vh",
-          background: "linear-gradient(160deg, #020d10 0%, #041520 40%, #060f1a 100%)",
           position: "relative",
           overflow: "hidden",
         }}
