@@ -246,7 +246,10 @@ function ProjectCard({ project, index }) {
   const status = statusConfig[project.status] || statusConfig.default;
   const images = project.gallery?.length ? project.gallery : [project.image];
   const isActive = isMobile ? false : hovered;
-  const isSpotify = project.slug === "spotifyclone-app";
+    const isSpotify = project.slug === "spotifyclone-app";
+  const isFitPath = project.slug === "fitpath-app";
+  const useContainImage = isSpotify || isFitPath;
+
 
   return (
     <div
@@ -295,8 +298,8 @@ function ProjectCard({ project, index }) {
           >
             {images.map((img, i) => (
               <SwiperSlide key={i}>
-                <div style={{ position: "relative", width: "100%", height: "240px", background: isSpotify ? "#000" : "transparent" }}>
-                  <Image src={img} alt={project.Heading} fill style={{ objectFit: isSpotify ? "contain" : "cover" }} />
+                <div style={{ position: "relative", width: "100%", height: "240px", background: useContainImage ? "#000" : "transparent" }}>
+                  <Image src={img} alt={project.Heading} fill style={{ objectFit: useContainImage ? "contain" : "cover" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(7,21,27,0.96))" }} />
                 </div>
               </SwiperSlide>
