@@ -103,8 +103,8 @@ export const projects = [
     frontendRepo: "https://github.com/wahb-amir/Zeeshan",
     image: "/ProjectImages/portfoliohome.png",
     gallery: [
-      "/ProjectImages/Portfolio/Image1.png",
-      "/ProjectImages/Portfolio/Image2.png",
+      "/ProjectImages/portfoliohome.png",
+      "/ProjectImages/portfoliohome.png",
     ],
     technologies: [
       "Next.js",
