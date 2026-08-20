@@ -33,7 +33,7 @@ const socials = [
   },
   {
     icon: FaLinkedin,
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://www.linkedin.com/in/shahnawaz-saddam-butt-b4381642b",
     label: "LinkedIn",
   },
   {

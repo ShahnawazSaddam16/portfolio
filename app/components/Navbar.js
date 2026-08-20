@@ -214,7 +214,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/shahnawaz-saddam-butt-b4381642b"
             target="_blank"
             className="social-icon h-11 w-11 rounded-xl flex items-center justify-center text-gray-300 hover:text-blue-400"
           >
