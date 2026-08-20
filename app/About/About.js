@@ -161,42 +161,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Facts and Journey */}
-      <section className="mt-20 max-w-6xl mx-auto px-4 sm:px-8 pb-20">
-        {/* Header */}
-        <header className="text-center mb-16">
-          <h2 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            Facts & Figures
-          </h2>
-          <p className="text-gray-400 text-lg">
-            A quick look at my journey, experience, and achievements.
-          </p>
-        </header>
-
-        {/* Facts Grid - 3D */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {[
-            { number: "10+", label: "Projects", icon: "🎯" },
-            { number: "1+", label: "Year", icon: "⏳" },
-            { number: "100%", label: "Dedication", icon: "💯" },
-            { number: "10+", label: "Technologies", icon: "⚡" },
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="card-3d relative group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 group-hover:border-cyan-500/50 rounded-2xl p-8 text-center group-hover:animate-glow">
-                <p className="text-4xl mb-3">{stat.icon}</p>
-                <h4 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </h4>
-                <p className="text-gray-400 font-medium">{stat.label}</p>
-              </div>
-            </div>
-          ))}
-        </div>
 
         <QuickFacts />
 
@@ -304,7 +268,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </section>
   );
 };
 
