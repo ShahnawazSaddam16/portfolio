@@ -26,7 +26,7 @@ function useInView(ref, threshold = 0.15) {
 const testimonials = [
   {
     quote:
-      "Working with Shahnawaz was an absolute pleasure. He delivered our grocery store website ahead of schedule and the design exceeded every expectation we had. The responsiveness across all devices is flawless. Give quick feebacks and great ideas.",
+      "Dear Shahnawaz, Thank you so much for your excellent and quick work in developing our website and taking our business online. Really appreciate your dedication, professionalism, and support. Great job and looking forward to working with you again!",
     author: "Value Max Team",
     role: "Client · Grocery Retail",
     project: "Value Max",

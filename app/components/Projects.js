@@ -272,7 +272,7 @@ function ProjectCard({ project, index }) {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        height: "840px",
+        height: "895px",
         alignSelf: "flex-start",
       }}
     >
