@@ -140,7 +140,7 @@ export const projects = [
     Text: "A full-stack fitness tracking mobile app with personalized workout plans, progress tracking, and a clean, responsive interface built for daily use.",
     description:
       "Fit-Path is a cross-platform mobile fitness app that helps users plan, track, and stay consistent with their workouts. Users can follow structured workout paths, log exercises and progress over time, and view their fitness journey through visual stats. The frontend is built with React Native and styled using NativeWind for a fast, native-feeling experience across iOS and Android. The backend manages user accounts, workout data, and progress history.",
-    demoLink: "https://expo.dev/accounts/shahnawaz_butt15/projects/Fit-Path/builds/975cf080-8070-453a-8d8c-bc9381c5ae7b",
+    demoLink: "https://7dish70hhldpcvsw.public.blob.vercel-storage.com/Fit-Path.apk",
     frontendRepo: "https://github.com/ShahnawazSaddam16/Fit-Path",
     backendRepo: "https://github.com/ShahnawazSaddam16/Fit-Path-Mobile-Backend",
     image: "/ProjectImages/Fit-Path/Image1.jpeg",
