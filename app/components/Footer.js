@@ -28,7 +28,7 @@ const navLinks = [
 const socials = [
   {
     icon: FaGithub,
-    href: "https://github.com/ShahanwazSaddam144?tab=repositories",
+    href: "https://github.com/ShahnawazSaddam16?tab=repositories",
     label: "GitHub",
   },
   {
