@@ -288,7 +288,7 @@ export const projects = [
   image: "/ProjectImages/Reelo/image1.jpeg",
   gallery: [
     "/ProjectImages/Reelo/image1.jpeg",
-    "/ProjectImages/Reelo/image3.jpeg",
+    "/ProjectImages/Reelo/image2.jpeg",
   ],
   technologies: [
     "React Native",
