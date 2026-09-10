@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Github, Copy, Mail, Send } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

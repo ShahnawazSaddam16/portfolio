@@ -208,9 +208,9 @@ export default function ProjectDetailPage({ params }) {
 
   const status = statusConfig[project.status] || statusConfig.default;
   const images = project.gallery?.length ? project.gallery : [project.image];
-  const isSpotify = project.slug === "spotifyclone-app";
+  const isReelo = project.slug === "reelo-app";
   const isFitPath = project.slug === "fitpath-app";
-  const useContainImage = isSpotify || isFitPath;
+  const useContainImage = isReelo|| isFitPath;
 
   return (
     <>
