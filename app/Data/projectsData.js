@@ -282,7 +282,7 @@ export const projects = [
   Text: "A full-stack social media app for sharing posts and stories, connecting with users, and interacting through likes, comments, follows, and real-time notifications.",
   description:
     "Reelo is a full-stack social media application where users can create and share posts and stories, discover and follow other users, and interact with content through likes and comments. The platform provides personalized user profiles, a social feed, story sharing, and real-time notifications for social interactions. Built with a modern mobile-first interface, Reelo focuses on creating a smooth and engaging social networking experience without direct messaging.",
-  demoLink: "https://expo.dev/accounts/shahnawaz_butt15/projects/Spotify-Clone/builds/5571bc0d-f965-409f-953c-b3ed5dbe5d11",
+  demoLink: "https://7dish70hhldpcvsw.public.blob.vercel-storage.com/reelo.apk",
   frontendRepo: "https://github.com/ShahnawazSaddam16/Reelo-Frontend",
   backendRepo: "https://github.com/ShahnawazSaddam16/reelo-backend",
   image: "/ProjectImages/Reelo/image1.jpeg",
