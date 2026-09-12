@@ -269,19 +269,19 @@ const About = () => {
             className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-between gap-8 lg:gap-16 mb-20 mt-20"
           >
             <div className="w-full max-w-sm lg:max-w-md text-left mb-6 lg:mb-0">
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex justify-center items-center gap-3 mb-3">
                 <div className="h-[1px] w-10 lg:w-14 bg-gradient-to-r from-transparent to-cyan-400" />
                 <span className="text-cyan-400 text-xs sm:text-sm lg:text-base font-bold tracking-[0.3em] uppercase">
                   Quick Stats
                 </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h2 className=" text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Numbers Behind <span className="text-cyan-400">the Work</span>
               </h2>
             </div>
 
-            <div className="relative w-full flex flex-col lg:max-w-sm">
-              <div className="card-3d relative group">
+            <div className="relative w-full flex flex-col items-center lg:max-w-sm">
+              <div className="card-3d relative group w-full">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div
                   className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 group-hover:border-cyan-500/60 rounded-3xl p-8 sm:p-10 text-center animate-float group-hover:animate-glow transition-opacity duration-500 ease-out"
@@ -305,19 +305,19 @@ const About = () => {
                   <p className="text-sm text-gray-400 mt-4">{active.footer}</p>
                 </div>
               </div>
-            </div>
 
-            <div className="flex flex-col items-center gap-3 mt-6">
-              {statCards.map((_, i) => (
-                <div
-                  key={i}
-                  className={`h-2 rounded-full transition-all duration-500 ${
-                    i === activeStat
-                      ? "w-6 bg-cyan-400 shadow-[0_0_10px_#22d3ee]"
-                      : "w-2 bg-slate-600"
-                  }`}
-                />
-              ))}
+              <div className="flex items-center gap-3 mt-6">
+                {statCards.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-2 rounded-full transition-all duration-500 ${
+                      i === activeStat
+                        ? "w-6 bg-cyan-400 shadow-[0_0_10px_#22d3ee]"
+                        : "w-2 bg-slate-600"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
