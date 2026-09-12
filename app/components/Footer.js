@@ -46,6 +46,11 @@ const socials = [
 export default function Footer() {
   const ref = useRef(null);
   const inView = useInView(ref);
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <>
@@ -202,7 +207,7 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p style={{ color: "#334155", fontSize: "12px", fontWeight: 500 }}>
-              © {new Date().getFullYear()} Shahnawaz Saddam Butt. All rights reserved.
+              © {currentYear} Shahnawaz Saddam Butt. All rights reserved.
             </p>
             <p
               style={{

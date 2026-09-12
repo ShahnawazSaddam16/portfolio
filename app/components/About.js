@@ -129,22 +129,29 @@ const StatCardWrapper = ({ delayMs, inView, children }) => (
 );
 
 const About = () => {
-  const [currentTime, setCurrentTime] = useState(getLiveTime());
-  const [learningDays, setLearningDays] = useState(getLearningDays());
+  const [currentTime, setCurrentTime] = useState("--:--:--");
+  const [learningDays, setLearningDays] = useState(0);
   const deployedProjects = 10;
   const [statsRef, statsInView] = useInView();
 
   useEffect(() => {
-    const timeInterval = setInterval(() => setCurrentTime(getLiveTime()), 1000);
-    return () => clearInterval(timeInterval);
-  }, []);
+    const syncTime = () => {
+      setCurrentTime(getLiveTime());
+      setLearningDays(getLearningDays());
+    };
 
-  useEffect(() => {
+    syncTime();
+
+    const timeInterval = setInterval(() => setCurrentTime(getLiveTime()), 1000);
     const daysInterval = setInterval(
       () => setLearningDays(getLearningDays()),
       1000 * 60 * 60,
     );
-    return () => clearInterval(daysInterval);
+
+    return () => {
+      clearInterval(timeInterval);
+      clearInterval(daysInterval);
+    };
   }, []);
 
   return (
