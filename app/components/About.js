@@ -113,24 +113,31 @@ const TimelineItem = ({ item, isLast }) => {
 };
 
 const About = () => {
-  const [currentTime, setCurrentTime] = useState(getLiveTime());
-  const [learningDays, setLearningDays] = useState(getLearningDays());
+  const [currentTime, setCurrentTime] = useState("00:00:00");
+  const [learningDays, setLearningDays] = useState(0);
   const deployedProjects = 10;
   const [statsRef, statsInView] = useInView();
   const [activeStat, setActiveStat] = useState(0);
   const [statVisible, setStatVisible] = useState(true);
 
   useEffect(() => {
-    const timeInterval = setInterval(() => setCurrentTime(getLiveTime()), 1000);
-    return () => clearInterval(timeInterval);
-  }, []);
+    const syncLiveData = () => {
+      setCurrentTime(getLiveTime());
+      setLearningDays(getLearningDays());
+    };
 
-  useEffect(() => {
+    syncLiveData();
+
+    const timeInterval = setInterval(() => setCurrentTime(getLiveTime()), 1000);
     const daysInterval = setInterval(
       () => setLearningDays(getLearningDays()),
       1000 * 60 * 60,
     );
-    return () => clearInterval(daysInterval);
+
+    return () => {
+      clearInterval(timeInterval);
+      clearInterval(daysInterval);
+    };
   }, []);
 
   useEffect(() => {
