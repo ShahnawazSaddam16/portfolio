@@ -2,7 +2,17 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
-import { Award, Code, Star, Zap } from "lucide-react";
+import {
+  Award,
+  Code,
+  Star,
+  Zap,
+  Trophy,
+  Layers,
+  Globe,
+  Medal,
+  Briefcase,
+} from "lucide-react";
 import QuickFacts from "./QuickFacts";
 
 const getLiveTime = () => new Date().toLocaleTimeString();
@@ -129,8 +139,6 @@ const About = () => {
   const [learningDays, setLearningDays] = useState(0);
   const deployedProjects = 10;
   const [statsRef, statsInView] = useInView();
-  const [activeStat, setActiveStat] = useState(0);
-  const [statVisible, setStatVisible] = useState(true);
   const [showCert, setShowCert] = useState(false);
 
   useEffect(() => {
@@ -161,52 +169,88 @@ const About = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (!statsInView) return;
-    const cycle = setInterval(() => {
-      setStatVisible(false);
-      setTimeout(() => {
-        setActiveStat((prev) => (prev + 1) % statCards.length);
-        setStatVisible(true);
-      }, 400);
-    }, 5000);
-    return () => clearInterval(cycle);
-  }, [statsInView]);
-
   const statCards = [
     {
-      icon: <Zap className="w-8 h-8 text-cyan-400" />,
+      icon: <Zap className="w-7 h-7 text-cyan-400" />,
       iconBg: "from-cyan-500/20 to-blue-500/20",
       titleColor: "text-cyan-300",
       valueColor: "text-cyan-400",
       label: "⏰ Live Time",
       value: currentTime,
-      valueSize: "text-4xl sm:text-5xl font-mono",
+      valueSize: "text-xl sm:text-2xl xl:text-3xl font-mono",
       footer: "Real-time coding timer",
     },
     {
-      icon: <Code className="w-8 h-8 text-blue-400" />,
+      icon: <Code className="w-7 h-7 text-blue-400" />,
       iconBg: "from-blue-500/20 to-purple-500/20",
       titleColor: "text-blue-300",
       valueColor: "text-blue-400",
       label: "📚 Days Coding",
       value: `${learningDays}+`,
-      valueSize: "text-5xl sm:text-6xl",
+      valueSize: "text-4xl sm:text-5xl",
       footer: "Days of learning journey",
     },
     {
-      icon: <Award className="w-8 h-8 text-purple-400" />,
+      icon: <Award className="w-7 h-7 text-purple-400" />,
       iconBg: "from-purple-500/20 to-pink-500/20",
       titleColor: "text-purple-300",
       valueColor: "text-purple-400",
       label: "🚀 Projects",
       value: `${deployedProjects}+`,
-      valueSize: "text-5xl sm:text-6xl",
+      valueSize: "text-4xl sm:text-5xl",
       footer: "Live & deployed projects",
     },
+    {
+      icon: <Layers className="w-7 h-7 text-cyan-400" />,
+      iconBg: "from-cyan-500/20 to-blue-500/20",
+      titleColor: "text-cyan-300",
+      valueColor: "text-cyan-400",
+      label: "🧩 Technologies",
+      value: "8+",
+      valueSize: "text-4xl sm:text-5xl",
+      footer: "Tools across the full stack",
+    },
+    {
+      icon: <Globe className="w-7 h-7 text-blue-400" />,
+      iconBg: "from-blue-500/20 to-purple-500/20",
+      titleColor: "text-blue-300",
+      valueColor: "text-blue-400",
+      label: "🌍 Hackathons",
+      value: "2",
+      valueSize: "text-4xl sm:text-5xl",
+      footer: "International, both solo builds",
+    },
+    {
+      icon: <Trophy className="w-7 h-7 text-purple-400" />,
+      iconBg: "from-purple-500/20 to-pink-500/20",
+      titleColor: "text-purple-300",
+      valueColor: "text-purple-400",
+      label: "🏆 Best Rank",
+      value: "37th",
+      valueSize: "text-4xl sm:text-5xl",
+      footer: "Out of 775 participants",
+    },
+    {
+      icon: <Medal className="w-7 h-7 text-cyan-400" />,
+      iconBg: "from-cyan-500/20 to-blue-500/20",
+      titleColor: "text-cyan-300",
+      valueColor: "text-cyan-400",
+      label: "🎖️ Global Finalist",
+      value: "2026",
+      valueSize: "text-4xl sm:text-5xl",
+      footer: "USAII Global AI Hackathon",
+    },
+    {
+      icon: <Briefcase className="w-7 h-7 text-blue-400" />,
+      iconBg: "from-blue-500/20 to-purple-500/20",
+      titleColor: "text-blue-300",
+      valueColor: "text-blue-400",
+      label: "💼 Clients",
+      value: "1+",
+      valueSize: "text-4xl sm:text-5xl",
+      footer: "Freelance debut completed",
+    },
   ];
-
-  const active = statCards[activeStat];
 
   return (
     <section id="About">
@@ -380,60 +424,65 @@ const About = () => {
             </div>
           </div>
 
-          <div
-            ref={statsRef}
-            className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-between gap-8 lg:gap-16 mb-20 mt-20"
-          >
-            <div className="w-full max-w-sm lg:max-w-md text-left mb-6 lg:mb-0">
+          <div ref={statsRef} className="mb-20 mt-20">
+            <div className="flex flex-col items-center text-center mb-12">
               <div className="flex justify-center items-center gap-3 mb-3">
                 <div className="h-[1px] w-10 lg:w-14 bg-gradient-to-r from-transparent to-cyan-400" />
                 <span className="text-cyan-400 text-xs sm:text-sm lg:text-base font-bold tracking-[0.3em] uppercase">
                   Quick Stats
                 </span>
+                <div className="h-[1px] w-10 lg:w-14 bg-gradient-to-l from-transparent to-cyan-400" />
               </div>
-              <h2 className=" text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Numbers Behind <span className="text-cyan-400">the Work</span>
               </h2>
+              <p className="mt-4 max-w-xl text-sm sm:text-base text-gray-400 leading-relaxed">
+                A live snapshot of my journey — time invested, projects shipped,
+                and milestones reached along the way.
+              </p>
             </div>
 
-            <div className="relative w-full flex flex-col items-center lg:max-w-sm">
-              <div className="card-3d relative group w-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              {statCards.map((card, i) => (
                 <div
-                  className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 group-hover:border-cyan-500/60 rounded-3xl p-8 sm:p-10 text-center animate-float group-hover:animate-glow transition-opacity duration-500 ease-out"
-                  style={{ opacity: statVisible ? 1 : 0 }}
+                  key={card.label}
+                  className="transition-all duration-700 ease-out"
+                  style={{
+                    opacity: statsInView ? 1 : 0,
+                    transform: statsInView
+                      ? "translateY(0)"
+                      : "translateY(28px)",
+                    transitionDelay: `${i * 100}ms`,
+                  }}
                 >
-                  <div
-                    className={`mb-4 inline-block p-4 rounded-2xl bg-gradient-to-br ${active.iconBg}`}
-                  >
-                    {active.icon}
+                  <div className="card-3d relative group h-full">
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div
+                      className="relative h-full flex flex-col items-center justify-between bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 group-hover:border-cyan-500/60 rounded-3xl p-5 sm:p-7 text-center animate-float group-hover:animate-glow"
+                      style={{ animationDelay: `-${i * 0.37}s` }}
+                    >
+                      <div
+                        className={`mb-4 inline-block p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${card.iconBg}`}
+                      >
+                        {card.icon}
+                      </div>
+                      <h3
+                        className={`text-sm sm:text-lg lg:text-xl font-bold mb-3 ${card.titleColor}`}
+                      >
+                        {card.label}
+                      </h3>
+                      <h4
+                        className={`font-extrabold ${card.valueSize} ${card.valueColor}`}
+                      >
+                        {card.value}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-gray-400 mt-4">
+                        {card.footer}
+                      </p>
+                    </div>
                   </div>
-                  <h2
-                    className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-3 ${active.titleColor}`}
-                  >
-                    {active.label}
-                  </h2>
-                  <h4
-                    className={`font-extrabold ${active.valueSize} ${active.valueColor}`}
-                  >
-                    {active.value}
-                  </h4>
-                  <p className="text-sm text-gray-400 mt-4">{active.footer}</p>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-3 mt-6">
-                {statCards.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`h-2 rounded-full transition-all duration-500 ${
-                      i === activeStat
-                        ? "w-6 bg-cyan-400 shadow-[0_0_10px_#22d3ee]"
-                        : "w-2 bg-slate-600"
-                    }`}
-                  />
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
