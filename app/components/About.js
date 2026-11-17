@@ -37,6 +37,18 @@ const useInView = (options = {}) => {
   return [ref, inView];
 };
 
+const aboutSentences = [
+  "Hi, I'm Shahnawaz Saddam Butt — a self-taught full-stack developer who started coding just over a year ago and hasn't stopped shipping since.",
+  "I build practical tools: web apps, backend services, and AI-powered systems.",
+  "Most recently I've placed in two consecutive international hackathons — 37th out of 775 participants at Hack for Humanity 2026 with EcoTracker.",
+  "Both solo builds.",
+  "I care about making things that actually work — fast, reliable, and grounded in real-world needs.",
+  "Completing my first client and starting my new journey as a freelancer and sucessfully made a best debut in field of freelancing.",
+];
+
+const TEXT_DURATION = 9000;
+const CERT_DURATION = 6000;
+
 const timelineItems = [
   {
     title: "Early 2025",
@@ -119,6 +131,15 @@ const About = () => {
   const [statsRef, statsInView] = useInView();
   const [activeStat, setActiveStat] = useState(0);
   const [statVisible, setStatVisible] = useState(true);
+  const [showCert, setShowCert] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(
+      () => setShowCert((prev) => !prev),
+      showCert ? CERT_DURATION : TEXT_DURATION,
+    );
+    return () => clearTimeout(timer);
+  }, [showCert]);
 
   useEffect(() => {
     const syncLiveData = () => {
@@ -211,6 +232,14 @@ const About = () => {
           from { opacity: 0; transform: translateX(30px); }
           to { opacity: 1; transform: translateX(0); }
         }
+        @keyframes progressFill {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        @keyframes sheen {
+          0% { transform: translateX(-120%) skewX(-20deg); }
+          100% { transform: translateX(260%) skewX(-20deg); }
+        }
         .animate-float { animation: float 3s ease-in-out infinite; }
         .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
         .animate-glow { animation: glow 2s ease-in-out infinite; }
@@ -223,6 +252,24 @@ const About = () => {
         .card-3d:hover {
           transform: rotateX(5deg) rotateY(8deg) translateZ(15px);
           box-shadow: 0 20px 50px rgba(34, 211, 238, 0.4);
+        }
+        .about-layer {
+          transition: opacity 0.9s cubic-bezier(0.23, 1, 0.320, 1),
+            transform 0.9s cubic-bezier(0.23, 1, 0.320, 1),
+            filter 0.9s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        .about-sentence {
+          transition: opacity 0.7s ease-out, filter 0.7s ease-out;
+        }
+        .cert-sheen::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 30%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+          animation: sheen 2.2s ease-in-out 0.9s 1;
+          pointer-events: none;
         }
       `}</style>
 
@@ -253,20 +300,82 @@ const About = () => {
 
             <div className="relative animate-slideInLeft">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-xl" />
-              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl px-6 sm:px-8 py-6 sm:py-8 text-center lg:text-left">
-                <p className="text-sm sm:text-base font-sans text-gray-300 leading-7 sm:leading-8">
-                  Hi, I'm Shahnawaz Saddam Butt — a self-taught full-stack
-                  developer who started coding just over a year ago and hasn't
-                  stopped shipping since. I build practical tools: web apps,
-                  backend services, and AI-powered systems. Most recently I've
-                  placed in two consecutive international hackathons — 37th out
-                  of 775 participants at Hack for Humanity 2026 with EcoTracker.
-                  Both solo builds. I care about making things that actually
-                  work — fast, reliable, and grounded in real-world needs.
-                  Completing my first client and starting my new journey as a
-                  freelancer and sucessfully made a best debut in field of
-                  freelancing.
-                </p>
+              <div className="relative grid">
+                <div
+                  className="about-layer col-start-1 row-start-1 flex flex-col bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl px-6 sm:px-8 py-6 sm:py-8 text-center lg:text-left"
+                  style={{
+                    opacity: showCert ? 0 : 1,
+                    transform: showCert
+                      ? "translateY(-16px) scale(0.96)"
+                      : "translateY(0) scale(1)",
+                    filter: showCert ? "blur(8px)" : "blur(0px)",
+                    pointerEvents: showCert ? "none" : "auto",
+                  }}
+                >
+                  <p className="text-sm sm:text-base font-sans text-gray-300 leading-7 sm:leading-8">
+                    {aboutSentences.map((sentence, i) => (
+                      <React.Fragment key={i}>
+                        <span
+                          className="about-sentence"
+                          style={{
+                            opacity: showCert ? 0 : 1,
+                            filter: showCert ? "blur(4px)" : "blur(0px)",
+                            transitionDelay: showCert
+                              ? "0ms"
+                              : `${400 + i * 450}ms`,
+                          }}
+                        >
+                          {sentence}
+                        </span>{" "}
+                      </React.Fragment>
+                    ))}
+                  </p>
+                  <div className="mt-6 h-[2px] w-full bg-slate-700/60 rounded-full overflow-hidden">
+                    {!showCert && (
+                      <div
+                        className="h-full w-full bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 origin-left"
+                        style={{
+                          animation: `progressFill ${TEXT_DURATION}ms linear forwards`,
+                        }}
+                      />
+                    )}
+                  </div>
+                </div>
+
+                <div
+                  className="about-layer col-start-1 row-start-1 flex items-center justify-center"
+                  style={{
+                    opacity: showCert ? 1 : 0,
+                    transform: showCert
+                      ? "translateY(0) scale(1)"
+                      : "translateY(16px) scale(0.94)",
+                    filter: showCert ? "blur(0px)" : "blur(8px)",
+                    pointerEvents: showCert ? "auto" : "none",
+                  }}
+                >
+                  <div className="relative w-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-3 sm:p-4 animate-glow">
+                    <div
+                      key={showCert ? "on" : "off"}
+                      className="cert-sheen relative overflow-hidden rounded-2xl"
+                    >
+                      <img
+                        src="/certificate.png"
+                        alt="USAII Global AI Hackathon 2026 Certificate of Finalist"
+                        className="w-full h-auto block"
+                      />
+                    </div>
+                    <div className="mt-3 h-[2px] w-full bg-slate-700/60 rounded-full overflow-hidden">
+                      {showCert && (
+                        <div
+                          className="h-full w-full bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 origin-left"
+                          style={{
+                            animation: `progressFill ${CERT_DURATION}ms linear forwards`,
+                          }}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
